@@ -6,6 +6,7 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@remotion/cli": "4.0.300",
     "@remotion/tailwind-v4": "4.0.300",
     "@remotion/zod-types": "4.0.300",
