@@ -1,14 +1,15 @@
 import {
   AbsoluteFill,
-  interpolate,
+  Img,
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
-import { z } from "zod";
+
+import { useGSAP } from '@gsap/react';
 import { zColor } from "@remotion/zod-types";
 import { gsap } from "gsap";
 import { useRef } from "react";
-import { useGSAP } from '@gsap/react';
+import { z } from "zod";
 
 gsap.registerPlugin(useGSAP);
 
@@ -51,6 +52,7 @@ export const BeginningComponent: React.FC<z.infer<typeof BeginningComponentSchem
             color: color,
           }}>{text}</div>
       </AbsoluteFill >
+      <Img src="https://picsum.photos/id/237/200/300" />
     </AbsoluteFill>
   );
 };
