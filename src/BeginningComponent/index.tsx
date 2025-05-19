@@ -1,6 +1,7 @@
 import {
   AbsoluteFill,
   Img,
+  staticFile,
   useCurrentFrame,
   useVideoConfig,
 } from "remotion";
@@ -34,7 +35,7 @@ export const BeginningComponent: React.FC<z.infer<typeof BeginningComponentSchem
   useGSAP(() => {
     if (timelineRef.current === null) {
       const tl = gsap.timeline({ paused: true });
-      tl.to(elementRef.current, { rotation: -90, x: 0, duration: 5 });
+      tl.to(elementRef.current, { y: -800, opacity: 0.5, duration: 5 });
       timelineRef.current = tl;
     }
 
@@ -43,16 +44,17 @@ export const BeginningComponent: React.FC<z.infer<typeof BeginningComponentSchem
   }, [frame]);
 
   return (
-    <AbsoluteFill style={{ backgroundColor: "white" }}>
-      <AbsoluteFill>
+    <AbsoluteFill>
+      {/* <AbsoluteFill>
         <div
           ref={elementRef}
           style={{
             fontSize: 100,
             color: color,
           }}>{text}</div>
-      </AbsoluteFill >
-      <Img src="https://picsum.photos/id/237/200/300" />
+      </AbsoluteFill > */}
+      <Img ref={elementRef}
+        src={staticFile("demo/45dc9078-842c-4047-80f2-569aa236c8d5/screenshot.png")} />
     </AbsoluteFill>
   );
 };
